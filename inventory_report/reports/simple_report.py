@@ -15,9 +15,9 @@ class SimpleReport:
         m_f_date = convert(arr[0]["data_de_fabricacao"])
         m_v_date = datetime.date(2800, 1, 1)
         days_distance = m_v_date - now
-        companys = {x['nome_da_empresa']: 0 for x in arr}
+        companies = {x["nome_da_empresa"]: 0 for x in arr}
         for pr in arr:
-            companys[pr["nome_da_empresa"]] += 1
+            companies[pr["nome_da_empresa"]] += 1
 
             if convert(pr["data_de_fabricacao"]) < m_f_date:
                 m_f_date = convert(pr["data_de_fabricacao"])
@@ -29,8 +29,8 @@ class SimpleReport:
                     days_distance = distance
                     m_v_date = validate_pr
 
-        max_products = max([x for x in companys.values()])
-        company = [x for x in companys if companys[x] == max_products]
+        max_products = max([x for x in companies.values()])
+        company = [x for x in companies if companies[x] == max_products]
 
         return f"""Data de fabricação mais antiga: {m_f_date}
 Data de validade mais próxima: {m_v_date}
