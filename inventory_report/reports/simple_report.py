@@ -15,10 +15,8 @@ class SimpleReport:
         m_f_date = convert(arr[0]["data_de_fabricacao"])
         m_v_date = datetime.date(2800, 1, 1)
         days_distance = m_v_date - now
-        companys = {}
+        companys = {x['nome_da_empresa']: 0 for x in arr}
         for pr in arr:
-            if not companys.get(pr["nome_da_empresa"]):
-                companys[pr["nome_da_empresa"]] = 0
             companys[pr["nome_da_empresa"]] += 1
 
             if convert(pr["data_de_fabricacao"]) < m_f_date:
