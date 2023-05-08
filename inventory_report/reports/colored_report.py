@@ -40,4 +40,5 @@ class ColoredReport:
                 f"\033[36m{date}\033[0m",
             )
 
+        # print(report)
         return report
