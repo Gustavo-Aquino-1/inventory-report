@@ -39,5 +39,5 @@ class Inventory:
     def import_data(cls, path, report_type: str):
         redirect = {"csv": CSV, "json": JSON, "xml": XML}
         ind = path.rindex(".")
-        type_arq = path[ind + 1 :]
+        type_arq = path[ind + 1:]
         return redirect[type_arq].import_data(path, report_type)
