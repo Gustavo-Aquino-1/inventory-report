@@ -3,8 +3,8 @@ import csv
 
 
 class CsvImporter(Importer):
-    @classmethod
-    def import_data(cls, path):
+    @staticmethod
+    def import_data(path, rp=None):
         if "json" in path or "xml" in path:
             raise ValueError('Arquivo inválido')
         with open(path, mode="r", encoding="utf8") as file:
