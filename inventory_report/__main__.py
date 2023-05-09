@@ -20,10 +20,8 @@ def main():
     inventory = InventoryRefactor(importers[extension])
     inventory.import_data(path, report_type)
     relatory = list(inventory.data[0])
-    # print(relatory)
     while relatory[-1] == '\n':
         del relatory[-1]
-    # print(relatory)
     if report_type == 'simples':
         print("".join(relatory), end="")
     else:
